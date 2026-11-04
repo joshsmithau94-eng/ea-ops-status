@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-11-04T10:30:26Z",
+  "prs": [
+    {
+      "number": 190,
+      "ci": "failure",
+      "qa": "none",
+      "review_needed": false
+    },
+    {
+      "number": 121,
+      "ci": "success",
+      "qa": "none",
+      "review_needed": false
+    },
+    {
+      "number": 83,
+      "ci": "failure",
+      "qa": "none",
+      "review_needed": false
+    }
+  ],
+  "bots": [
+    {
+      "bot": "example-bot",
+      "state": "running",
+      "job": "EXAMPLE: replace me",
+      "since": "2026-11-04T20:00:00+11:00"
+    },
+    {
+      "bot": "example-bot2",
+      "state": "waiting_on_josh",
+      "job": "EXAMPLE: needs approval",
+      "since": "2026-11-04T20:30:00+11:00"
+    }
+  ],
+  "error_count": 0
+}
