@@ -1,0 +1,36 @@
+name: refresh
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/checkout@v4
+        with:
+          ref: status
+          path: bots-src
+      - name: Generate
+        env:
+          GH_TOKEN: ${{ secrets.EA_READ_TOKEN }}
+          EA_REPO: ${{ secrets.EA_REPO }}
+          BOTS_PATH: bots-src/bots.json
+        run: python3 gen.py
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- status.json; then echo "no change"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add status.json
+          git commit -m "status: refresh"
+          git push origin HEAD:main
