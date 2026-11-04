@@ -1,0 +1,4 @@
+[
+  {"bot": "example-bot", "state": "running", "job": "EXAMPLE: replace me", "since": "2026-11-04T20:00:00+11:00"},
+  {"bot": "example-bot2", "state": "waiting_on_josh", "job": "EXAMPLE: needs approval", "since": "2026-11-04T20:30:00+11:00"}
+]
