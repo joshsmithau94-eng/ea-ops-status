@@ -16,7 +16,7 @@ JOSH_LOGIN = "joshsmithau94-eng"
 BOTS_PATH = os.environ.get("BOTS_PATH", "bots-src/bots.json")
 OUT_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "status.json")
 
-FIELDS = "number,title,url,author,labels,reviewDecision,reviewRequests,statusCheckRollup,isDraft,updatedAt"
+FIELDS = "number,title,url,author,labels,reviewDecision,reviewRequests,headRefOid,isDraft,updatedAt"
 
 LABEL_RE = re.compile(r"[^a-z0-9:_-]+")
 ISO_DATETIME_RE = re.compile(
@@ -66,17 +66,47 @@ def run_gh(errors):
     return []
 
 
-def compute_ci(status_checks):
-    if not status_checks:
+def gh_api(path, errors):
+    try:
+        out = subprocess.run(["gh", "api", path], capture_output=True, text=True,
+                             timeout=60, check=True)
+        return json.loads(out.stdout)
+    except subprocess.CalledProcessError:
+        errors.append("gh api failed")
+    except (subprocess.TimeoutExpired, json.JSONDecodeError, FileNotFoundError):
+        errors.append("gh api error")
+    return None
+
+
+def compute_ci(sha, errors):
+    """CI from commit statuses + workflow runs for the head sha (no Checks API)."""
+    if not sha or not REPO:
         return "none"
-    saw_pending = False
-    for check in status_checks:
-        state = (check.get("conclusion") or check.get("state") or "").upper()
-        if state in ("FAILURE", "ERROR", "CANCELLED", "TIMED_OUT"):
-            return "failure"
-        if state in ("", "PENDING", "IN_PROGRESS", "QUEUED", "EXPECTED", "WAITING"):
-            saw_pending = True
-    return "pending" if saw_pending else "success"
+    states = []
+    combined = gh_api(f"repos/{REPO}/commits/{sha}/status", errors)
+    if isinstance(combined, dict):
+        for st in combined.get("statuses") or []:
+            states.append((st.get("state") or "").lower())
+    runs = gh_api(f"repos/{REPO}/actions/runs?head_sha={sha}&per_page=100", errors)
+    if isinstance(runs, dict):
+        for r in runs.get("workflow_runs") or []:
+            if r.get("status") != "completed":
+                states.append("pending")
+            else:
+                c = (r.get("conclusion") or "").lower()
+                if c in ("success", "skipped", "neutral"):
+                    states.append("success")
+                elif c in ("failure", "cancelled", "timed_out", "startup_failure", "action_required"):
+                    states.append("failure")
+                else:
+                    states.append("pending")
+    if not states:
+        return "none"
+    if any(s in ("failure", "error") for s in states):
+        return "failure"
+    if any(s != "success" for s in states):
+        return "pending"
+    return "success"
 
 
 def compute_qa(labels):
@@ -126,7 +156,7 @@ def main():
         review_decision = pr.get("reviewDecision")
         prs.append({
             "number": pr.get("number"),
-            "ci": compute_ci(pr.get("statusCheckRollup") or []),
+            "ci": compute_ci(pr.get("headRefOid"), errors),
             "qa": sanitize_label(compute_qa(labels), 30),
             "review_needed": compute_review_needed(labels, review_requests, review_decision),
         })
