@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T10:30:26Z",
+  "generated_at": "2026-11-04T11:32:44Z",
   "prs": [
     {
       "number": 190,
@@ -25,14 +25,277 @@
       "bot": "example-bot",
       "state": "running",
       "job": "EXAMPLE: replace me",
-      "since": "2026-11-04T20:00:00+11:00"
+      "since": "2026-11-04T20:00:00+11:00",
+      "state_norm": "running",
+      "example": true
     },
     {
       "bot": "example-bot2",
       "state": "waiting_on_josh",
       "job": "EXAMPLE: needs approval",
-      "since": "2026-11-04T20:30:00+11:00"
+      "since": "2026-11-04T20:30:00+11:00",
+      "state_norm": "waiting_approval",
+      "example": true
     }
   ],
-  "error_count": 0
+  "events": [
+    {
+      "t": "2026-11-02T09:39:55Z",
+      "bot_or_source": "ci",
+      "kind": "ci_success",
+      "text": "Drift Detection passed on main"
+    },
+    {
+      "t": "2026-11-01T12:06:23Z",
+      "bot_or_source": "ci",
+      "kind": "ci_failure",
+      "text": "GPG data refresh monitor failed on main"
+    },
+    {
+      "t": "2026-11-01T10:37:05Z",
+      "bot_or_source": "ci",
+      "kind": "ci_success",
+      "text": "Supabase keepalive passed on main"
+    },
+    {
+      "t": "2026-10-31T09:46:26Z",
+      "bot_or_source": "ci",
+      "kind": "ci_success",
+      "text": "Supabase keepalive passed on main"
+    },
+    {
+      "t": "2026-10-31T01:54:12Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #191 merged"
+    },
+    {
+      "t": "2026-10-31T01:51:52Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #192 merged"
+    },
+    {
+      "t": "2026-10-31T01:39:59Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #189 merged"
+    },
+    {
+      "t": "2026-10-31T01:38:53Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #192 opened"
+    },
+    {
+      "t": "2026-10-31T01:38:45Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #181 merged"
+    },
+    {
+      "t": "2026-10-31T01:37:43Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #188 merged"
+    },
+    {
+      "t": "2026-10-31T01:36:05Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #191 opened"
+    },
+    {
+      "t": "2026-10-31T01:33:39Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #184 merged"
+    },
+    {
+      "t": "2026-10-31T01:33:29Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #187 merged"
+    },
+    {
+      "t": "2026-10-31T01:31:53Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #190 opened"
+    },
+    {
+      "t": "2026-10-31T01:31:26Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #189 opened"
+    },
+    {
+      "t": "2026-10-31T01:20:52Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #188 opened"
+    },
+    {
+      "t": "2026-10-29T05:58:08Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #187 opened"
+    },
+    {
+      "t": "2026-10-29T03:20:46Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #186 merged"
+    },
+    {
+      "t": "2026-10-29T03:17:42Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #186 opened"
+    },
+    {
+      "t": "2026-10-29T03:17:17Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #183 merged"
+    },
+    {
+      "t": "2026-10-29T02:48:47Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #185 merged"
+    },
+    {
+      "t": "2026-10-29T02:20:35Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #185 opened"
+    },
+    {
+      "t": "2026-10-29T01:16:31Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #180 merged"
+    },
+    {
+      "t": "2026-10-29T00:59:36Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #184 opened"
+    },
+    {
+      "t": "2026-10-29T00:31:35Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #183 opened"
+    },
+    {
+      "t": "2026-10-29T00:25:28Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #182 merged"
+    },
+    {
+      "t": "2026-10-29T00:21:33Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #182 opened"
+    },
+    {
+      "t": "2026-10-29T00:18:38Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #179 merged"
+    },
+    {
+      "t": "2026-10-29T00:11:25Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #181 opened"
+    },
+    {
+      "t": "2026-10-28T23:53:17Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #180 opened"
+    },
+    {
+      "t": "2026-10-28T23:15:35Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #179 opened"
+    },
+    {
+      "t": "2026-10-28T14:38:35Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #178 merged"
+    },
+    {
+      "t": "2026-10-28T14:38:28Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #177 merged"
+    },
+    {
+      "t": "2026-10-28T14:28:35Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #178 opened"
+    },
+    {
+      "t": "2026-10-28T14:25:19Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #177 opened"
+    },
+    {
+      "t": "2026-10-28T14:17:29Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #175 merged"
+    },
+    {
+      "t": "2026-10-28T14:17:21Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #174 merged"
+    },
+    {
+      "t": "2026-10-28T13:14:38Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #176 merged"
+    },
+    {
+      "t": "2026-10-28T13:10:45Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #176 opened"
+    },
+    {
+      "t": "2026-10-28T13:05:36Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #175 opened"
+    },
+    {
+      "t": "2026-10-28T12:51:51Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #173 merged"
+    },
+    {
+      "t": "2026-10-28T12:18:00Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #174 opened"
+    }
+  ],
+  "summary": {
+    "waiting": 1,
+    "in_progress": 1,
+    "finished": 19
+  },
+  "error_count": 1
 }

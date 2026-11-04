@@ -9,7 +9,7 @@ import os
 import re
 import subprocess
 import tempfile
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 REPO = os.environ.get("EA_REPO", "")
 JOSH_LOGIN = "joshsmithau94-eng"
@@ -145,6 +145,124 @@ def load_bots(errors):
     return []
 
 
+STATES = {"running", "waiting_approval", "waiting_yesno", "waiting_review",
+          "blocked", "done", "idle"}
+LEGACY_STATES = {"waiting_on_josh": "waiting_approval", "waiting": "waiting_approval",
+                 "in_progress": "running", "finished": "done", "complete": "done"}
+WAITING_STATES = {"waiting_approval", "waiting_yesno", "waiting_review", "blocked"}
+EVENT_DAYS = 7
+EVENT_MAX = 60
+CI_WORKFLOW_MAX = 40
+
+
+def norm_state(raw):
+    s = sanitize_label(raw, 40)
+    s = LEGACY_STATES.get(s, s)
+    return s if s in STATES else "idle"
+
+
+def parse_iso(text):
+    try:
+        return datetime.fromisoformat(str(text).replace("Z", "+00:00"))
+    except (ValueError, TypeError):
+        return None
+
+
+def iso_utc(dt):
+    return dt.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def gh_json(args, errors, label):
+    try:
+        out = subprocess.run(["gh"] + args, capture_output=True, text=True,
+                             timeout=60, check=True)
+        return json.loads(out.stdout)
+    except subprocess.CalledProcessError:
+        errors.append(f"{label} failed")
+    except (subprocess.TimeoutExpired, json.JSONDecodeError, FileNotFoundError):
+        errors.append(f"{label} error")
+    return None
+
+
+def build_events(old_status, bots, errors, now):
+    """Derive timeline events (no model). Text never includes titles/branches/URLs."""
+    cutoff = now - timedelta(days=EVENT_DAYS)
+    since_day = cutoff.strftime("%Y-%m-%d")
+    events = []
+    if REPO:
+        merged = gh_json(["pr", "list", "-R", REPO, "--state", "merged", "--limit", "100",
+                          "--search", f"merged:>={since_day}", "--json", "number,mergedAt"],
+                         errors, "merged list") or []
+        for p in merged:
+            dt = parse_iso(p.get("mergedAt"))
+            if dt and dt >= cutoff:
+                events.append({"t": iso_utc(dt), "bot_or_source": "github", "kind": "pr_merged",
+                               "text": f"PR #{int(p.get('number') or 0)} merged"})
+        opened = gh_json(["pr", "list", "-R", REPO, "--state", "all", "--limit", "100",
+                          "--search", f"created:>={since_day}", "--json", "number,createdAt"],
+                         errors, "opened list") or []
+        for p in opened:
+            dt = parse_iso(p.get("createdAt"))
+            if dt and dt >= cutoff:
+                events.append({"t": iso_utc(dt), "bot_or_source": "github", "kind": "pr_opened",
+                               "text": f"PR #{int(p.get('number') or 0)} opened"})
+        runs = gh_api(f"repos/{REPO}/actions/runs?branch=main&status=completed&per_page=100"
+                      f"&created=%3E%3D{since_day}", errors)
+        n = 0
+        for r in (runs or {}).get("workflow_runs") or []:
+            c = (r.get("conclusion") or "").lower()
+            if c == "success":
+                kind, word = "ci_success", "passed"
+            elif c in ("failure", "timed_out", "startup_failure"):
+                kind, word = "ci_failure", "failed"
+            else:
+                continue
+            dt = parse_iso(r.get("updated_at") or r.get("created_at"))
+            if not dt or dt < cutoff:
+                continue
+            name = sanitize_job(r.get("name") or "workflow", 40)
+            events.append({"t": iso_utc(dt), "bot_or_source": "ci", "kind": kind,
+                           "text": sanitize_job(f"{name} {word} on main")})
+            n += 1
+            if n >= CI_WORKFLOW_MAX:
+                break
+    # Bot state changes: carry forward previous ones, add new transitions.
+    old_events = (old_status or {}).get("events") or [] if isinstance(old_status, dict) else []
+    for e in old_events:
+        if isinstance(e, dict) and e.get("kind") == "bot_state":
+            dt = parse_iso(e.get("t"))
+            if dt and dt >= cutoff:
+                events.append({"t": iso_utc(dt), "bot_or_source": sanitize_label(e.get("bot_or_source"), 40),
+                               "kind": "bot_state", "text": sanitize_job(e.get("text"))})
+    old_bots = {}
+    if isinstance(old_status, dict):
+        for b in old_status.get("bots") or []:
+            if isinstance(b, dict):
+                old_bots[b.get("bot")] = norm_state(b.get("state_norm") or b.get("state"))
+    for b in bots:
+        prev = old_bots.get(b["bot"])
+        if prev is not None and prev != b["state_norm"]:
+            dt = parse_iso(b["since"]) or now
+            events.append({"t": iso_utc(dt), "bot_or_source": b["bot"], "kind": "bot_state",
+                           "text": sanitize_job(f"{b['state_norm']}: {b['job']}")})
+    seen, uniq = set(), []
+    for e in sorted(events, key=lambda e: e["t"], reverse=True):
+        key = (e["t"], e["bot_or_source"], e["kind"], e["text"])
+        if key not in seen:
+            seen.add(key)
+            uniq.append(e)
+    return uniq[:EVENT_MAX]
+
+
+def build_summary(prs, bots, events):
+    waiting = sum(1 for b in bots if b["state_norm"] in WAITING_STATES)
+    waiting += sum(1 for p in prs if p["review_needed"])
+    in_progress = sum(1 for b in bots if b["state_norm"] == "running")
+    finished = sum(1 for b in bots if b["state_norm"] == "done")
+    finished += sum(1 for e in events if e["kind"] == "pr_merged")
+    return {"waiting": waiting, "in_progress": in_progress, "finished": finished}
+
+
 def main():
     errors = []
     raw_prs = run_gh(errors)
@@ -171,14 +289,9 @@ def main():
             "state": sanitize_label(b.get("state"), 40),
             "job": sanitize_job(b.get("job")),
             "since": sanitize_since(b.get("since")),
+            "state_norm": norm_state(b.get("state")),
+            "example": "example" in (str(b.get("bot")) + str(b.get("job"))).lower(),
         })
-
-    status = {
-        "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "prs": prs,
-        "bots": bots,
-        "error_count": len(errors),
-    }
 
     old_status = None
     try:
@@ -186,6 +299,18 @@ def main():
             old_status = json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
         pass
+
+    now = datetime.now(timezone.utc)
+    events = build_events(old_status, bots, errors, now)
+    status = {
+        "generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "prs": prs,
+        "bots": bots,
+        "events": events,
+        "summary": build_summary(prs, bots, events),
+        "error_count": len(errors),
+    }
+
 
     if isinstance(old_status, dict):
         comparable_old = {k: v for k, v in old_status.items() if k != "generated_at"}
