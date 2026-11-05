@@ -13,8 +13,8 @@
  },
  {
   "bot": "Data Platform (AWS)",
-  "state": "waiting_yesno",
-  "job": "Archive upload to S3: waiting Josh yes",
-  "since": "2026-11-05T15:50:00+11:00"
+  "state": "running",
+  "job": "Archive upload round 2 to S3 (4 tars)",
+  "since": "2026-11-05T15:53:00+11:00"
  }
 ]
