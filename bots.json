@@ -13,8 +13,8 @@
  },
  {
   "bot": "Data Platform (AWS)",
-  "state": "idle",
-  "job": "Restore done; idle",
-  "since": "2026-11-05T19:37:00+11:00"
+  "state": "running",
+  "job": "Second read-only restore: DE sums and rollback tars",
+  "since": "2026-11-05T19:46:00+11:00"
  }
 ]
