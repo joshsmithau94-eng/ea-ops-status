@@ -13,8 +13,8 @@
  },
  {
   "bot": "Data Platform (AWS)",
-  "state": "idle",
-  "job": "Round 3 archive verified; idle",
-  "since": "2026-11-05T18:23:00+11:00"
+  "state": "running",
+  "job": "Read-only restore of DE/F4 loader files from archive",
+  "since": "2026-11-05T18:46:00+11:00"
  }
 ]
