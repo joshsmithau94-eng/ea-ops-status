@@ -13,8 +13,8 @@
  },
  {
   "bot": "Data Platform (AWS)",
-  "state": "idle",
-  "job": "Archive round 2 verified on D:",
-  "since": "2026-11-05T17:05:00+11:00"
+  "state": "running",
+  "job": "Archive upload round 3 to S3 (4 tars)",
+  "since": "2026-11-05T17:16:00+11:00"
  }
 ]
