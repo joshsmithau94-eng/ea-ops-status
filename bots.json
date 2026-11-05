@@ -13,8 +13,8 @@
  },
  {
   "bot": "Data Platform (AWS)",
-  "state": "waiting_yesno",
-  "job": "Round 3 on S3; Josh to sync and verify on D:",
-  "since": "2026-11-05T18:06:00+11:00"
+  "state": "idle",
+  "job": "Round 3 archive verified; idle",
+  "since": "2026-11-05T18:23:00+11:00"
  }
 ]
