@@ -1,6 +1,12 @@
 {
-  "generated_at": "2026-11-05T04:04:43Z",
+  "generated_at": "2026-11-05T12:11:35Z",
   "prs": [
+    {
+      "number": 193,
+      "ci": "success",
+      "qa": "qa-nits",
+      "review_needed": false
+    },
     {
       "number": 190,
       "ci": "failure",
@@ -36,9 +42,23 @@
       "since": "2026-11-04T20:30:00+11:00",
       "state_norm": "waiting_approval",
       "example": true
+    },
+    {
+      "bot": "dataplatformaws",
+      "state": "idle",
+      "job": "Restores done; idle",
+      "since": "2026-11-05T20:06:00+11:00",
+      "state_norm": "idle",
+      "example": false
     }
   ],
   "events": [
+    {
+      "t": "2026-11-05T09:14:37Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #193 opened"
+    },
     {
       "t": "2026-11-02T09:39:55Z",
       "bot_or_source": "ci",
@@ -134,12 +154,6 @@
       "bot_or_source": "github",
       "kind": "pr_opened",
       "text": "PR #188 opened"
-    },
-    {
-      "t": "2026-10-29T05:58:08Z",
-      "bot_or_source": "github",
-      "kind": "pr_opened",
-      "text": "PR #187 opened"
     }
   ],
   "summary": {
