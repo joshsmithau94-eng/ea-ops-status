@@ -19,8 +19,8 @@
  },
  {
   "bot": "Supabase Bot",
-  "state": "running",
-  "job": "Preparing isolated Germany SQL rehearsal",
-  "since": "2026-11-06T09:24:00+11:00"
+  "state": "waiting_review",
+  "job": "Isolated rehearsal files await independent review",
+  "since": "2026-11-06T09:31:00+11:00"
  }
 ]
