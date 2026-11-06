@@ -1,26 +1,26 @@
 [
- {
-  "bot": "example-bot",
-  "state": "running",
-  "job": "EXAMPLE: replace me",
-  "since": "2026-11-04T20:00:00+11:00"
- },
- {
-  "bot": "example-bot2",
-  "state": "waiting_on_josh",
-  "job": "EXAMPLE: needs approval",
-  "since": "2026-11-04T20:30:00+11:00"
- },
- {
-  "bot": "Data Platform (AWS)",
-  "state": "idle",
-  "job": "Restores done; idle",
-  "since": "2026-11-05T20:06:00+11:00"
- },
- {
-  "bot": "Supabase Bot",
-  "state": "waiting_review",
-  "job": "RU + PA static QA passed; awaiting BI review",
-  "since": "2026-11-06T20:29:00+11:00"
- }
+  {
+    "bot": "example-bot",
+    "state": "running",
+    "job": "EXAMPLE: replace me",
+    "since": "2026-11-04T20:00:00+11:00"
+  },
+  {
+    "bot": "example-bot2",
+    "state": "waiting_on_josh",
+    "job": "EXAMPLE: needs approval",
+    "since": "2026-11-04T20:30:00+11:00"
+  },
+  {
+    "bot": "Data Platform (AWS)",
+    "state": "idle",
+    "job": "Restores done; idle",
+    "since": "2026-11-05T20:06:00+11:00"
+  },
+  {
+    "bot": "Supabase Bot",
+    "state": "waiting_review",
+    "job": "RU + PA rows applied; BI reviewing series readiness",
+    "since": "2026-11-06T23:30:54+11:00"
+  }
 ]
