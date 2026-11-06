@@ -19,8 +19,8 @@
  },
  {
   "bot": "Supabase Bot",
-  "state": "done",
-  "job": "Isolated Germany SQL rehearsal passed",
-  "since": "2026-11-06T13:02:00+11:00"
+  "state": "running",
+  "job": "RU + PA static prep; no prod apply or AWS changes",
+  "since": "2026-11-06T19:14:13+11:00"
  }
 ]
