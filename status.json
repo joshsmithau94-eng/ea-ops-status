@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T19:55:02Z",
+  "generated_at": "2026-11-06T00:37:53Z",
   "prs": [
     {
       "number": 194,
@@ -55,6 +55,14 @@
       "job": "Restores done; idle",
       "since": "2026-11-05T20:06:00+11:00",
       "state_norm": "idle",
+      "example": false
+    },
+    {
+      "bot": "supabasebot",
+      "state": "blocked",
+      "job": "Rehearsal repair stalled on code helper",
+      "since": "2026-11-06T11:06:00+11:00",
+      "state_norm": "blocked",
       "example": false
     }
   ],
@@ -169,7 +177,7 @@
     }
   ],
   "summary": {
-    "waiting": 1,
+    "waiting": 2,
     "in_progress": 1,
     "finished": 7
   },
