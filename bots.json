@@ -19,8 +19,8 @@
  },
  {
   "bot": "Supabase Bot",
-  "state": "waiting_review",
-  "job": "Isolated rehearsal files await independent review",
-  "since": "2026-11-06T09:31:00+11:00"
+  "state": "blocked",
+  "job": "Rehearsal repair stalled on code helper",
+  "since": "2026-11-06T11:06:00+11:00"
  }
 ]
