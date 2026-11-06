@@ -19,8 +19,8 @@
   },
   {
     "bot": "Supabase Bot",
-    "state": "waiting_review",
-    "job": "RU + PA code QA final; EA85/86 reviewer close",
-    "since": "2026-11-07T00:28:14+11:00"
+    "state": "idle",
+    "job": "RU + PA applied, reviewed, merged; idle",
+    "since": "2026-11-07T00:37:33+11:00"
   }
 ]
