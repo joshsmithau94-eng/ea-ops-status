@@ -19,8 +19,8 @@
  },
  {
   "bot": "Supabase Bot",
-  "state": "running",
-  "job": "RU + PA static prep; no prod apply or AWS changes",
-  "since": "2026-11-06T19:14:13+11:00"
+  "state": "waiting_review",
+  "job": "RU + PA static QA passed; awaiting BI review",
+  "since": "2026-11-06T20:29:00+11:00"
  }
 ]
