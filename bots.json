@@ -19,8 +19,8 @@
  },
  {
   "bot": "Supabase Bot",
-  "state": "running",
-  "job": "Repairing offline Germany rehearsal runner",
-  "since": "2026-11-06T12:01:00+11:00"
+  "state": "done",
+  "job": "Isolated Germany SQL rehearsal passed",
+  "since": "2026-11-06T13:02:00+11:00"
  }
 ]
