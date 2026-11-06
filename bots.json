@@ -19,8 +19,8 @@
   },
   {
     "bot": "Supabase Bot",
-    "state": "running",
-    "job": "PR201 independent QA; saved ES + GB F3 audit",
-    "since": "2026-11-07T00:24:11+11:00"
+    "state": "waiting_review",
+    "job": "RU + PA code QA final; EA85/86 reviewer close",
+    "since": "2026-11-07T00:28:14+11:00"
   }
 ]
