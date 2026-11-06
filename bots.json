@@ -19,8 +19,8 @@
  },
  {
   "bot": "Supabase Bot",
-  "state": "blocked",
-  "job": "Rehearsal repair stalled on code helper",
-  "since": "2026-11-06T11:06:00+11:00"
+  "state": "running",
+  "job": "Repairing offline Germany rehearsal runner",
+  "since": "2026-11-06T12:01:00+11:00"
  }
 ]
