@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T00:55:07Z",
+  "generated_at": "2026-11-08T13:54:58Z",
   "prs": [
     {
       "number": 202,
@@ -186,18 +186,6 @@
       "bot_or_source": "ci",
       "kind": "ci_success",
       "text": "Drift Detection passed on main"
-    },
-    {
-      "t": "2026-11-01T12:06:23Z",
-      "bot_or_source": "ci",
-      "kind": "ci_failure",
-      "text": "GPG data refresh monitor failed on main"
-    },
-    {
-      "t": "2026-11-01T10:37:05Z",
-      "bot_or_source": "ci",
-      "kind": "ci_success",
-      "text": "Supabase keepalive passed on main"
     }
   ],
   "summary": {
