@@ -1,15 +1,9 @@
 {
-  "generated_at": "2026-11-08T13:54:58Z",
+  "generated_at": "2026-11-09T08:42:27Z",
   "prs": [
     {
       "number": 202,
       "ci": "success",
-      "qa": "none",
-      "review_needed": false
-    },
-    {
-      "number": 190,
-      "ci": "failure",
       "qa": "none",
       "review_needed": false
     },
@@ -61,6 +55,24 @@
     }
   ],
   "events": [
+    {
+      "t": "2026-11-09T08:01:15Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #190 merged"
+    },
+    {
+      "t": "2026-11-09T07:29:09Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #203 merged"
+    },
+    {
+      "t": "2026-11-09T05:43:28Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #203 opened"
+    },
     {
       "t": "2026-11-08T00:21:36Z",
       "bot_or_source": "github",
@@ -191,7 +203,7 @@
   "summary": {
     "waiting": 1,
     "in_progress": 1,
-    "finished": 7
+    "finished": 9
   },
   "error_count": 0
 }
