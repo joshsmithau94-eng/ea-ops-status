@@ -1,6 +1,12 @@
 {
-  "generated_at": "2026-11-10T09:37:50Z",
+  "generated_at": "2026-11-10T17:16:06Z",
   "prs": [
+    {
+      "number": 210,
+      "ci": "success",
+      "qa": "none",
+      "review_needed": false
+    },
     {
       "number": 202,
       "ci": "success",
@@ -55,6 +61,12 @@
     }
   ],
   "events": [
+    {
+      "t": "2026-11-10T11:05:19Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #210 opened"
+    },
     {
       "t": "2026-11-10T07:57:03Z",
       "bot_or_source": "github",
