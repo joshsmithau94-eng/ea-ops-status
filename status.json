@@ -1,12 +1,6 @@
 {
-  "generated_at": "2026-11-11T17:03:02Z",
+  "generated_at": "2026-11-11T23:24:46Z",
   "prs": [
-    {
-      "number": 217,
-      "ci": "success",
-      "qa": "none",
-      "review_needed": false
-    },
     {
       "number": 210,
       "ci": "success",
@@ -67,6 +61,12 @@
     }
   ],
   "events": [
+    {
+      "t": "2026-11-11T21:11:21Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #217 merged"
+    },
     {
       "t": "2026-11-11T12:43:56Z",
       "bot_or_source": "github",
@@ -299,7 +299,7 @@
   "summary": {
     "waiting": 1,
     "in_progress": 1,
-    "finished": 13
+    "finished": 14
   },
   "error_count": 0
 }
