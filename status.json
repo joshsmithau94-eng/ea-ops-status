@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T12:09:47Z",
+  "generated_at": "2026-11-12T19:52:03Z",
   "prs": [
     {
       "number": 210,
@@ -282,12 +282,6 @@
       "bot_or_source": "supabasebot",
       "kind": "bot_state",
       "text": "done: Isolated Germany SQL rehearsal passed"
-    },
-    {
-      "t": "2026-11-05T12:51:47Z",
-      "bot_or_source": "github",
-      "kind": "pr_opened",
-      "text": "PR #194 opened"
     }
   ],
   "summary": {
