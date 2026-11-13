@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T00:44:36Z",
+  "generated_at": "2026-11-13T07:21:28Z",
   "prs": [
     {
       "number": 202,
@@ -210,84 +210,12 @@
       "bot_or_source": "github",
       "kind": "pr_merged",
       "text": "PR #200 merged"
-    },
-    {
-      "t": "2026-11-06T05:41:31Z",
-      "bot_or_source": "github",
-      "kind": "pr_opened",
-      "text": "PR #200 opened"
-    },
-    {
-      "t": "2026-11-06T03:53:15Z",
-      "bot_or_source": "github",
-      "kind": "pr_merged",
-      "text": "PR #199 merged"
-    },
-    {
-      "t": "2026-11-06T03:44:45Z",
-      "bot_or_source": "github",
-      "kind": "pr_opened",
-      "text": "PR #199 opened"
-    },
-    {
-      "t": "2026-11-06T03:08:07Z",
-      "bot_or_source": "github",
-      "kind": "pr_opened",
-      "text": "PR #198 opened"
-    },
-    {
-      "t": "2026-11-06T02:54:48Z",
-      "bot_or_source": "github",
-      "kind": "pr_merged",
-      "text": "PR #197 merged"
-    },
-    {
-      "t": "2026-11-06T02:49:04Z",
-      "bot_or_source": "github",
-      "kind": "pr_opened",
-      "text": "PR #197 opened"
-    },
-    {
-      "t": "2026-11-06T02:41:02Z",
-      "bot_or_source": "github",
-      "kind": "pr_merged",
-      "text": "PR #196 merged"
-    },
-    {
-      "t": "2026-11-06T02:34:47Z",
-      "bot_or_source": "github",
-      "kind": "pr_opened",
-      "text": "PR #196 opened"
-    },
-    {
-      "t": "2026-11-06T02:17:08Z",
-      "bot_or_source": "github",
-      "kind": "pr_opened",
-      "text": "PR #195 opened"
-    },
-    {
-      "t": "2026-11-06T02:11:46Z",
-      "bot_or_source": "github",
-      "kind": "pr_merged",
-      "text": "PR #193 merged"
-    },
-    {
-      "t": "2026-11-06T02:08:57Z",
-      "bot_or_source": "github",
-      "kind": "pr_merged",
-      "text": "PR #194 merged"
-    },
-    {
-      "t": "2026-11-06T02:02:00Z",
-      "bot_or_source": "supabasebot",
-      "kind": "bot_state",
-      "text": "done: Isolated Germany SQL rehearsal passed"
     }
   ],
   "summary": {
     "waiting": 1,
     "in_progress": 1,
-    "finished": 15
+    "finished": 10
   },
   "error_count": 0
 }
