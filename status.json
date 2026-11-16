@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T01:08:57Z",
+  "generated_at": "2026-11-16T07:56:03Z",
   "prs": [
     {
       "number": 219,
@@ -55,6 +55,18 @@
     }
   ],
   "events": [
+    {
+      "t": "2026-11-16T02:22:00Z",
+      "bot_or_source": "github",
+      "kind": "pr_merged",
+      "text": "PR #220 merged"
+    },
+    {
+      "t": "2026-11-16T01:35:39Z",
+      "bot_or_source": "github",
+      "kind": "pr_opened",
+      "text": "PR #220 opened"
+    },
     {
       "t": "2026-11-15T23:58:20Z",
       "bot_or_source": "ci",
@@ -192,18 +204,6 @@
       "bot_or_source": "github",
       "kind": "pr_merged",
       "text": "PR #190 merged"
-    },
-    {
-      "t": "2026-11-09T07:29:09Z",
-      "bot_or_source": "github",
-      "kind": "pr_merged",
-      "text": "PR #203 merged"
-    },
-    {
-      "t": "2026-11-09T05:43:28Z",
-      "bot_or_source": "github",
-      "kind": "pr_opened",
-      "text": "PR #203 opened"
     }
   ],
   "summary": {
