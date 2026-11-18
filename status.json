@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T08:30:34Z",
+  "generated_at": "2026-11-18T17:28:09Z",
   "prs": [
     {
       "number": 219,
@@ -126,66 +126,12 @@
       "bot_or_source": "github",
       "kind": "pr_merged",
       "text": "PR #217 merged"
-    },
-    {
-      "t": "2026-11-11T12:43:56Z",
-      "bot_or_source": "github",
-      "kind": "pr_opened",
-      "text": "PR #217 opened"
-    },
-    {
-      "t": "2026-11-11T10:01:27Z",
-      "bot_or_source": "github",
-      "kind": "pr_merged",
-      "text": "PR #212 merged"
-    },
-    {
-      "t": "2026-11-11T09:26:09Z",
-      "bot_or_source": "github",
-      "kind": "pr_opened",
-      "text": "PR #216 opened"
-    },
-    {
-      "t": "2026-11-11T09:26:02Z",
-      "bot_or_source": "github",
-      "kind": "pr_opened",
-      "text": "PR #215 opened"
-    },
-    {
-      "t": "2026-11-11T09:25:39Z",
-      "bot_or_source": "github",
-      "kind": "pr_opened",
-      "text": "PR #214 opened"
-    },
-    {
-      "t": "2026-11-11T09:25:24Z",
-      "bot_or_source": "github",
-      "kind": "pr_opened",
-      "text": "PR #213 opened"
-    },
-    {
-      "t": "2026-11-11T09:25:21Z",
-      "bot_or_source": "github",
-      "kind": "pr_opened",
-      "text": "PR #212 opened"
-    },
-    {
-      "t": "2026-11-11T09:23:06Z",
-      "bot_or_source": "github",
-      "kind": "pr_merged",
-      "text": "PR #211 merged"
-    },
-    {
-      "t": "2026-11-11T09:09:52Z",
-      "bot_or_source": "github",
-      "kind": "pr_opened",
-      "text": "PR #211 opened"
     }
   ],
   "summary": {
     "waiting": 1,
     "in_progress": 1,
-    "finished": 6
+    "finished": 4
   },
   "error_count": 0
 }
