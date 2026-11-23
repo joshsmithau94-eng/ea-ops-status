@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T21:13:52Z",
+  "generated_at": "2026-11-23T01:43:28Z",
   "prs": [
     {
       "number": 222,
@@ -62,6 +62,12 @@
   ],
   "events": [
     {
+      "t": "2026-11-23T00:51:17Z",
+      "bot_or_source": "ci",
+      "kind": "ci_failure",
+      "text": "Knowledge weekly failed on main"
+    },
+    {
       "t": "2026-11-22T06:19:42Z",
       "bot_or_source": "github",
       "kind": "pr_opened",
@@ -96,18 +102,6 @@
       "bot_or_source": "github",
       "kind": "pr_merged",
       "text": "PR #220 merged"
-    },
-    {
-      "t": "2026-11-16T01:35:39Z",
-      "bot_or_source": "github",
-      "kind": "pr_opened",
-      "text": "PR #220 opened"
-    },
-    {
-      "t": "2026-11-15T23:58:20Z",
-      "bot_or_source": "ci",
-      "kind": "ci_failure",
-      "text": "Knowledge weekly failed on main"
     }
   ],
   "summary": {
