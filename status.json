@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T09:48:30Z",
+  "generated_at": "2026-11-23T21:43:16Z",
   "prs": [
     {
       "number": 222,
@@ -62,6 +62,12 @@
   ],
   "events": [
     {
+      "t": "2026-11-23T10:55:45Z",
+      "bot_or_source": "ci",
+      "kind": "ci_success",
+      "text": "Drift Detection passed on main"
+    },
+    {
       "t": "2026-11-23T00:51:17Z",
       "bot_or_source": "ci",
       "kind": "ci_failure",
@@ -90,12 +96,6 @@
       "bot_or_source": "github",
       "kind": "pr_opened",
       "text": "PR #221 opened"
-    },
-    {
-      "t": "2026-11-16T09:55:25Z",
-      "bot_or_source": "ci",
-      "kind": "ci_success",
-      "text": "Drift Detection passed on main"
     }
   ],
   "summary": {
