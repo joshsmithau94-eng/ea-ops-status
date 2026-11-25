@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T00:47:00Z",
+  "generated_at": "2026-11-25T09:15:01Z",
   "prs": [
     {
       "number": 222,
@@ -84,18 +84,12 @@
       "bot_or_source": "ci",
       "kind": "ci_success",
       "text": "Supabase keepalive passed on main"
-    },
-    {
-      "t": "2026-11-18T02:54:30Z",
-      "bot_or_source": "github",
-      "kind": "pr_merged",
-      "text": "PR #221 merged"
     }
   ],
   "summary": {
     "waiting": 1,
     "in_progress": 1,
-    "finished": 1
+    "finished": 0
   },
   "error_count": 0
 }
