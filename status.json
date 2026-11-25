@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T21:43:16Z",
+  "generated_at": "2026-11-25T00:47:00Z",
   "prs": [
     {
       "number": 222,
@@ -90,12 +90,6 @@
       "bot_or_source": "github",
       "kind": "pr_merged",
       "text": "PR #221 merged"
-    },
-    {
-      "t": "2026-11-17T23:42:39Z",
-      "bot_or_source": "github",
-      "kind": "pr_opened",
-      "text": "PR #221 opened"
     }
   ],
   "summary": {
